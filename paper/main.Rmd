@@ -1,0 +1,200 @@
+---
+title: " "
+output:
+  pdf_document:
+    number_sections: TRUE
+geometry: "left = 2.8cm, right = 2.8cm, top = 2cm, bottom = 2cm"
+fontsize: 11pt
+header-includes:
+  - \usepackage{float}
+  - \usepackage{sectsty}
+  - \usepackage{paralist}
+  - \usepackage{setspace}\spacing{1.5}
+  - \usepackage{fancyhdr}
+  - \usepackage{lastpage}
+  - \usepackage{dcolumn}
+  - \usepackage{hyperref}
+
+  - \usepackage{natbib}\bibliographystyle{agsm}
+  - \usepackage[nottoc, numbib]{tocbibind}
+bibliography: bibliography.bib
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(tinytex.verbose = TRUE)
+```
+
+\allsectionsfont{\centering}
+\subsectionfont{\raggedright}
+\subsubsectionfont{\raggedright}
+
+\pagenumbering{gobble}
+
+\begin{centering}
+
+\vspace{2cm}
+
+```{r uni_logo, echo=F, out.width="20%"}
+knitr::include_graphics("Universitycollegedublinlogo.png")
+```
+
+\vspace{1cm}
+
+\Large
+{\bf University College Dublin}
+
+\Large
+{\bf School Of Mathematics and Statistics}
+
+\vspace{1cm}
+
+\Large
+
+\doublespacing
+{\bf COMPARISON AND EVALUATION OF DIFFERENT\\ 
+      MACHINE LEARNING METHODS AT  PREDICTING\\
+      CREDIT CARD DEFAULT}
+
+\vspace{0.5 cm}
+
+\normalsize
+\singlespacing
+By
+
+\Large
+
+{\bf Sidney Harshman-Earley \\
+Denis O'Riordan}
+
+\vspace{1 cm}
+
+in partial fulfilment of ACM40960 - \\
+Projects in Maths Modelling required \\
+for the completion of the degree \\ 
+MSc in Data and Computational Sciences
+
+\vspace{1 cm}
+
+\bf{Principal Supervisor:} \Large{Dr Sarp Akcay} \\
+\bf{Programme Coordinator:} \Large{Assoc. Professor Lennon \'{O} N\'{a}raigh}
+
+\vspace{1 cm}
+
+\normalsize
+July 2022
+
+\end{centering}
+
+
+\newpage
+
+\pagenumbering{gobble}
+
+\spacing{1.1}
+\begin{centering}
+
+\Large
+We hereby certify that the submitted work is our own work, was completed while registered as candidates for the degree stated on the Title Page, and we have not obtained a degree elsewhere on the basis of the research presented in this submitted work.
+
+\vspace{1 cm}
+
+---  
+
+\vspace{1 cm}
+
+\normalsize
+
+{\bf Abstract}
+
+\end{centering}
+
+\spacing{1.2}
+
+Research into utilising ML methods to predict credit card default has largely been limited to studies conducted on a single historic data set. As part of an applied data science competition organised by the credit card company American Express, an industrial-sized dataset with masked feature labels was released which in turn provided the foundation for further research in this field. A subset of the data was used and had feature engineering and noise-reduction applied to create a dataset of 458'913 individual customer observations and 129 features. Exploratory data analysis found the P_2 variable, in particular, displayed a strong correlation with the target variable - defaulting on credit card payments. Four ML classification models - logistic regression (LR), logistic regression (P_2 feature only), Random Forest (RF) and Neural Networks (NN) - were trained, validated and tested on independent data to predict the target. The Neural Network and Random Forest models displayed the best ability to correctly identify cases of credit card default in the test data. These were the top two performing models on the test data in terms of overall accuracy, sensitivity and AUC, with the NN model marginally outperforming the RF. Only marginal improvements were gained from the full 129 variable logistic regression model compared to the P_2-only logistic regression model. The report concludes that there certainly are benefits to financial institutions to using advanced ML methods to identify potential incidences of credit card default and a method to mitigate credit risk. 
+
+
+\pagenumbering{roman}
+
+\newpage
+
+
+
+
+\centering
+\raggedright
+\newpage
+\spacing{1}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\spacing{1.5}
+
+
+\newpage
+
+\listoffigures
+
+\newpage
+
+\listoftables
+
+\newpage
+
+
+\spacing{1.25}
+
+\begin{centering}
+\end{centering}
+\newpage
+\pagenumbering{arabic}
+```{r intro, child = 'introduction.Rmd'}
+```
+
+
+\newpage
+
+```{r methods, child = 'lit_review.Rmd'}
+```
+
+
+\newpage
+
+```{r methods, child = 'data.Rmd'}
+```
+
+
+\newpage
+
+```{r methods, child = 'methods.Rmd'}
+```
+
+\newpage
+
+```{r results, child = 'results.Rmd'}
+```
+
+
+
+```{r discussion, child = 'discussion.Rmd' }
+```
+
+
+```{r conclusion, child = 'conclusion.Rmd'}
+```
+
+\newpage
+
+\pagenumbering{alph}
+
+```{r biblio, child = 'bibliography.Rmd'}
+```
+
+\newpage
+
+```{r appendix, child = 'appendix.Rmd' }
+```
+
+\newpage
+
+```{r abbre, child = 'abbreviations.Rmd' }
+```

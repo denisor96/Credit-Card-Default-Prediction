@@ -1,0 +1,130 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+
+\spacing{1}
+
+\hypertarget{review-of-literature}{%
+\section{Review of Literature}\label{review-of-literature}}
+
+There have been numerous articles and papers within the scope of using
+ML methods to predict credit default, this includes the prediction for
+credit card default.\\
+\vspace{.3 cm} Studies examining credit card default have been
+concentrated, mainly using data originally used as part of
+\citet{YEH20092473}. This data is currently freely available as the
+Default credit card clients Data Set on the UC Irvine Machine Learning
+Repository.\footnote{\url{https://archive.ics.uci.edu/ml/datasets/default+of+credit+card+clients}}
+This data, collected in October 2005 is from a cash and credit card
+issuing bank in Taiwan. Among the 30,000 observations, 22.12\% are the
+cardholders who defaulted on payment. This research employed a binary
+variable, default payment (Yes = 1, No = 0), as the response variable.
+This data uses 23 explanatory variables, including a mix of personal
+information(age, gender, marital status and education level), amount of
+credit given, historical bill statements, and historical payment
+information.\\
+\vspace{.3 cm} \citet{YEH20092473}, compared six classification
+algorithms - K-nearest neighbour, Logistic regression, Discriminant
+analysis Na\char239 ve Bayesian classifier, Artificial Neural Networks,
+Classification Trees. In the classification accuracy, the results show
+that there were few differences in error amongst the six methods. The
+generated probability of default by the Artificial Neural Network most
+closely resembled the actual probability of default which was estimated
+using a novel ``Sorting Smoothing Method''.\\
+\vspace{.3 cm} Other research on predicting credit card default in
+subsequent years utilised this data for training and evaluating models.
+The following is a sample of articles available, applying a wide variety
+of Machine Learning methods to this classification problem.
+\citet{Neema2017TheCO}, took a similar approach in the choice of methods
+but attempted to predict the best possible cost-effective outcome from
+the risk management perspective. Naive Bayes Estimator and Random Forest
+classifiers were introduced. This was evaluated using a cost function
+which gave a higher cost to defaulters classified not correctly as they
+are the minority in the data. It was concluded that original data with
+the Random Forest algorithm is the best in terms of a good balance on
+cost versus accuracy.\\
+\vspace{.3 cm} \citet{Yang2018-rt} introduces two new methods used to
+predict credit card default. Support Vector Machine (SVM) involves using
+a kernel function to map the predictor data into a high-dimensional
+feature space where the outcome classes are easily separable. XGBoost
+and LightGBM, forms of gradient boosted trees algorithm were used.
+LightGBM and XGBoost were both deemed to have the best performance in
+the prediction of categorical response variables.\\
+\vspace{.3 cm} While other studies have used Neural Networks in
+predicting credit card defaults, the models used have been vague, and
+little detail has been given on the architecture or tuning of the model.
+\citet{dnn2} trialled a range of Networks, experimenting with two to
+five layers with the number of processing units of 64, 32 and 16 units.
+Neural Networks with three layers and 64 units recorded the highest
+accuracy of all configurations.\\
+\vspace{.3 cm} Due to a lack of credit card-specific data pertaining to
+defaulting on payment, all available studies which predict credit card
+default utilise the Taiwan data, which is both region specific, over 15
+years old and obtained at a time when credit card issuers in Taiwan
+faced a credit card debt crisis.\footnote{\url{https://sevenpillarsinstitute.org/case-studies/taiwans-credit-card-crisis/}}
+
+\end{document}
